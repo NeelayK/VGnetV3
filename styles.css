@@ -1,0 +1,461 @@
+/* Define variables for easy customization */
+
+
+:root {
+    --primary-bg: #f5f5f5;  /* Light Grey */
+    --secondary-bg: #ffffff; /* White */
+    --text-color: #333;      /* Dark Grey for readability */
+    --text-color2: rgb(27, 27, 27);
+    --header-bg: #ffffff;    /* White header */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Global Styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+body {
+    background: var(--primary-bg);
+}
+
+/* Header */
+header {
+    background: var(--header-bg);
+    padding: 8px 0; /* Thinner header */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    max-height: 3rem;
+    gap: 3rem;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+nav ul li img{
+    height:4rem;
+}
+
+/* Header Navigation - Update Links */
+nav ul li {
+    text-transform: uppercase; /* Make all links uppercase */
+}
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;  /* Position it directly below the button */
+    left: 55%;  /* Align to the left of the button */
+    padding: 0;  /* Remove padding to eliminate extra space */
+    margin: 0;  /* Remove margin to eliminate extra space */
+    list-style: none;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s 0.3s;
+    display: flex;
+    flex-direction: column;  /* Stack the items vertically */
+    transform: translateY(450%);
+}
+
+/* Align Menu Items to Center */
+.dropdown-menu li {
+    text-align: center;
+}
+
+/* Remove the border from the last item */
+.dropdown-menu li:last-child {
+    border-bottom: none;
+    
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: -12rem;
+    border-radius: 4rem;
+    max-width: 10rem;
+    display: block;
+    background-color: var(--header-bg);
+    font-size: 1rem;
+    padding: 8px 16px;  /* Add padding inside the link to make the text clickable */
+}
+
+/* Hover Effect */
+.dropdown-menu li:hover {
+    background: var(--primary-bg);
+}
+
+/* Fade-in effect on hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(470%);  /* Small downward movement effect */
+    transition-delay: 0s;  /* Immediately show when hovering */
+}
+
+/* Allow dropdown to stay visible for a while before disappearing */
+.dropdown:not(:hover) .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0.3s;  /* Delay disappearing after mouse moves out */
+}
+
+.dropdown:not(:hover) .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 1s;
+    transition-delay: 1s;  /* Delay disappearing by 2 seconds after mouse moves out */
+}
+
+/* Hero Section */
+.hero {
+    height: 93vh;
+    background: url('/Assets/BG.jpeg') no-repeat center center/cover; /* Background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.lab-description {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    text-decoration:var(--text-color) underline;
+    color: var(--text-color);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    text-shadow: 0px 0px 10px var(--header-bg);
+    padding-bottom: 7rem;
+    font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: var(--text-color2);
+    margin-top: 0.5rem;
+}
+/* Vision Section */
+.vision-section {
+    text-align: center;
+    padding: 5rem 8%;
+    padding-bottom: 2%;
+    background-color: var(--primary-bg);
+}
+
+.vision-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.vision-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    color: var(--text-color);
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 8%;
+    background-color: var(--primary-bg);
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.info-box {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.info-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.info-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.learn-more-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    border: 2px solid black;
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.learn-more-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Mission Section */
+.mission-section {
+    position: relative;
+    text-align: center;
+    padding: 15rem 12%;
+    background: url('Assets/BG2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #222; /* Darker text for visibility */
+}
+
+/* Small Mission Label */
+.mission-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+/* Main Header */
+.mission-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Paragraph */
+.mission-section p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Objectives Section */
+.objectives-section {
+    text-align: center;
+    padding: 15rem 8%;
+    background-color: var(--primary-bg);
+    
+}
+
+/* Small Header */
+.objectives-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+/* Main Header */
+.objectives-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Paragraph */
+.objectives-section p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Publications Button */
+.pub-button {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    transition: 0.3s;
+}
+
+.pub-button:hover {
+    background: #444;
+}
+
+
+
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(3rem); /* Slightly moved down initially */
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+}
+
+/* When the element is in view */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #222; /* Dark background for minimal look */
+    color: var(--primary-bg); /* Lighter text color for a clean look */
+    font-size: 12px; /* Smaller font size */
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .research-areas {
+    flex: 1;
+    margin-right: 10px;
+    max-width: 45%;
+}
+
+.contact-info p, .research-areas ul {
+    margin: 2px 0;
+    color: var(--primary-bg);
+}
+
+.research-areas h5 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff; /* Lighter header text */
+}
+
+.research-areas ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+.research-areas li {
+    padding: 2px 0;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff; /* Slight hover effect */
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 5px;
+}
+
+.footer-bottom p{
+    color: var(--header-bg);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .contact-info, .research-areas {
+        max-width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+
+    .research-areas h5 {
+        font-size: 1.25rem;
+    }
+    
+    .research-areas ul {
+        font-size: 1rem;
+    }
+    
+
+}
+
+
+@media (max-width: 768px) {
+
+    header{
+        display: none;
+    }
+
+}
